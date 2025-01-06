@@ -1,0 +1,39 @@
+{
+  "name": "julian-ws-reflection",
+  "version": "1.0.0",
+  "description": "A JULIAN lib",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "files": ["dist"],
+
+  "scripts": {
+    "build": "tsc",
+    "build-watch": "tsc -w",
+    "test": "node --experimental-vm-modules --inspect-brk ./node_modules/jest/bin/jest.js",
+    "prepare": "npm run build",
+    "pub": "npm publish --access public"
+  },
+  "peerDependencies": {
+    "typexpress": "file://C:/Users/iorio/Documents/typexpress/typexpress"
+  },
+  "dependencies": {
+    "ws": "^8.18.0"
+  },
+  "devDependencies": {
+    "@tsconfig/node22": "^22.0.0",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.2",
+    "@types/ws": "^8.5.13",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=22.0.0"
+  }
+}
