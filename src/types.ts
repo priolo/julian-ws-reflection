@@ -1,38 +1,42 @@
 
-export interface RefMessage {
-    type: RefFromClientType
+export interface ClientMessage {
+    type: ClientMessageType
     payload: any
+}
+export interface ServerMessage {
+    type: ServerMessageType
+    payload: any
+}
+export interface ServerLogMessage extends ServerMessage{
+    name: string
+    source: string
 }
 
 /**
  * I tipi di messaggi che possono arrivare dal client
 */
-export enum RefFromClientType {
+export enum ClientMessageType {
     /**
      * Richiede l'albero dei nodi
      */
-    GET_STATE = "c-ref:get-state",
+    GET_STRUCT = "ref-c:get-struct",
+    /**
+     * Esegue un'azione
+     */
+    EXECUTE_ACTION = "ref-c:execute-action",
 }
 
-export enum RefFromServerType {
-    STATE = "s-ref:state",
-}
-
-export enum RefAction {
+export enum ServerMessageType {
     /**
-     * Aggiunge un nodo
+     * Risponde con lo stato dell'albero
      */
-    ADD_NODE = "ref:add-node",
+    STRUCT = "ref-s:struct",
     /**
-     * Rimuove un nodo
+     * Risponde con l'esito dell'azione
      */
-    REMOVE_NODE = "ref:remove-node",
+    ACTION_RESULT = "ref-s:action-result",
     /**
-     * Aggiorna un nodo
+     * Notifica un LOG al client
      */
-    UPDATE_NODE = "ref:update-node",
-    /**
-     * Aggiorna un nodo
-     */
-    GET_NODES = "ref:get-nodes",
+    LOG = "ref-s:log",
 }
