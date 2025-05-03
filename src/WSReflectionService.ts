@@ -1,4 +1,4 @@
-import { NodeState, utils, ws, types, ServiceBase } from "typexpress"
+import { NodeState, ServiceBase, types, utils, ws } from "@priolo/julian"
 import { ServerMessage, ClientMessageType, ServerMessageType, ServerLogMessage, ClientMessage } from "./types.js"
 
 

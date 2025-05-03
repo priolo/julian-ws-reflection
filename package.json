@@ -19,7 +19,7 @@
     "pub": "npm publish --access public"
   },
   "peerDependencies": {
-    "typexpress": "file://C:/Users/iorio/Documents/typexpress/typexpress"
+    "@priolo/julian": "file://C:/Users/iorio/Documents/julian"
   },
   "dependencies": {
     "ws": "^8.18.0"
